@@ -29,6 +29,5 @@ public class CsvFileWriterImpl implements CsvFileWriter {
         } catch (IOException e) {
             throw new RuntimeException("Can't write report to file: " + filePath, e);
         }
-
     }
 }
