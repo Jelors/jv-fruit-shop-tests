@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import model.FruitTransaction;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import service.ShopService;
@@ -31,6 +32,10 @@ class ShopServiceImplTest {
                         FruitTransaction.Operation.PURCHASE, new PurchaseOperation());
         OperationStrategy operationStrategy = new OperationStrategyImpl(handlerMap);
         shopService = new ShopServiceImpl(operationStrategy);
+    }
+
+    @AfterEach
+    void afterEach() {
         Storage.getFruitDbResult().clear();
     }
 

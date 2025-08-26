@@ -2,14 +2,14 @@ package service.impl;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import service.ReportGenerator;
 import storage.Storage;
 
 class ReportGeneratorImplTest {
 
-    @BeforeEach
+    @AfterEach
     void setUp() {
         Storage.getFruitDbResult().clear();
     }
