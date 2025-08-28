@@ -20,6 +20,7 @@ class CsvFileReaderImplTest {
     @BeforeAll
     static void setUp() {
         fileReader = new CsvFileReaderImpl();
+        fruitDao = new FruitDaoImpl();
     }
 
     @Test
@@ -34,7 +35,6 @@ class CsvFileReaderImplTest {
 
     @Test
     void read_ValidInput_Ok() {
-        fruitDao = new FruitDaoImpl();
         String filePath = "src/test/resources/test_input.csv";
         List<FruitTransaction> fruitTransactionList = fileReader.read(filePath, fruitDao);
 
@@ -49,7 +49,6 @@ class CsvFileReaderImplTest {
 
     @Test
     void read_EmptyFile_notOk() {
-        fruitDao = new FruitDaoImpl();
         String filePath = "src/test/resources/test_empty.csv";
 
         List<FruitTransaction> fruitTransactionList = fileReader.read(filePath, fruitDao);
